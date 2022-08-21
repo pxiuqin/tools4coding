@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# 功能：爬取一个公众号的所有历史文章存入数据库
+# 功能：爬取一个公众号的所有历史文章存入CSV文件
 # 用法：python wx_spider.py [公众号名称] 如python wx_spider.py xxx
 import time
 import random
@@ -95,8 +95,6 @@ def spider():
 
             # 分页请求文章列表
             while cur_page <= page_count:
-                if cur_page < 19:
-                    continue
                 time.sleep(random.randint(1,10))
                 url = 'https://mp.weixin.qq.com/cgi-bin/appmsg'
                 data = {
